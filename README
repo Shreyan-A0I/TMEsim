@@ -1,0 +1,19 @@
+# TMEsim
+
+Mechanistic ODE model of melanoma–CD8 T cell interaction, fit against the
+Frangieh et al. 2021 Perturb-CITE-seq dataset.
+
+## Setup
+
+Create and activate the conda environment from the repository root:
+
+    conda env create -f environment.yml
+    conda activate tmesim
+
+## Inspect the data
+
+    python scripts/inspect_data.py
+
+The first run downloads the dataset (about 1 GB) to `data/frangieh_2021.h5ad`.
+Later runs reuse that file. The script prints a summary of the dataset and
+writes the same text to `data/inspection_summary.txt`.

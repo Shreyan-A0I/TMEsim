@@ -1,0 +1,13 @@
+pertpy
+# Imported by pertpy.data but not declared as a dependency in pertpy 1.0.3
+filelock
+# pertpy 1.0.3 imports a statsmodels path that was removed in 0.15
+statsmodels<0.15
+scanpy
+anndata
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+jupyter
