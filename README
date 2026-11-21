@@ -10,10 +10,9 @@ Create and activate the conda environment from the repository root:
     conda env create -f environment.yml
     conda activate tmesim
 
-## Inspect the data
+## Explore the data
 
-    python scripts/inspect_data.py
+    jupyter notebook notebooks/01_data_exploration.ipynb
 
-The first run downloads the dataset (about 1 GB) to `data/frangieh_2021.h5ad`.
-Later runs reuse that file. The script prints a summary of the dataset and
-writes the same text to `data/inspection_summary.txt`.
+The first run downloads the dataset (about 1 GB) to `data/frangieh_2021.h5ad`;
+later runs reuse that file.
