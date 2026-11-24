@@ -11,3 +11,5 @@ pandas
 matplotlib
 seaborn
 jupyter
+# Reads the paper's supplementary tables workbook
+openpyxl

@@ -1,13 +1,13 @@
 # Papers, notes and rules (local only)
 literature/
 
-# Downloaded data and generated outputs (keep the directory itself)
-data/*
-!data/.gitkeep
+# Large processed dataset, re-downloaded by tmesim.data.load_adata()
+data/*.h5ad
 
 # Python artifacts
 __pycache__/
 *.py[cod]
+*.egg-info/
 .ipynb_checkpoints/
 
 # Environment directories

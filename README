@@ -5,14 +5,34 @@ Frangieh et al. 2021 Perturb-CITE-seq dataset.
 
 ## Setup
 
-Create and activate the conda environment from the repository root:
+Create and activate the conda environment from the repository root. This also
+installs the `tmesim` package in editable mode.
 
     conda env create -f environment.yml
     conda activate tmesim
 
+## Layout
+
+    tmesim/       shared code imported everywhere (data loading, model, plotting)
+    fit/          one script per parameter fit; each writes results/params/<name>.json
+    simulate/     scripts that run the fitted model
+    notebooks/    exploration only; imports tmesim, holds no reusable logic
+    data/
+      scp/        Single Cell Portal files (all 218,331 cells)
+      paper/      supplementary tables of the paper
+      digitized/  curves read off paper figures, one CSV per panel
+    results/
+      params/     fitted parameter values (JSON)
+      figures/    figures produced by fit/ and simulate/
+
+Folders are created when their first file is added.
+
+## Data
+
+Everything under `data/` is in the repository except the processed AnnData
+(about 1 GB). `tmesim.data.load_adata()` downloads it to
+`data/frangieh_2021.h5ad` on first use and reuses it afterwards.
+
 ## Explore the data
 
     jupyter notebook notebooks/01_data_exploration.ipynb
-
-The first run downloads the dataset (about 1 GB) to `data/frangieh_2021.h5ad`;
-later runs reuse that file.
