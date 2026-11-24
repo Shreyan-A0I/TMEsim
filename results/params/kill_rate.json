@@ -1,0 +1,13 @@
+{
+  "kappa_per_hour_per_ratio": 0.007606546843693413,
+  "kappa_se": 0.000525672310225974,
+  "kappa_per_48h_per_ratio": 0.36511424849728386,
+  "kappa_per_point": {
+    "1": 0.007718,
+    "2": 0.009124,
+    "4": 0.00722
+  },
+  "loo_abs_error_kill_percent": 5.096973507884338,
+  "data": "data/paper/killing_48h.csv",
+  "model": "S = exp(-kappa * R * t), growth cancels against no-TIL control"
+}
