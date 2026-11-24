@@ -25,7 +25,7 @@ Create and activate the conda environment from the repository root:
       figures/    figures produced by fit/ and simulate/
 
 Folders are created when their first file is added. Run scripts from the
-repository root as modules so `src` is importable, e.g. `python -m fit.kill_rate`.
+repository root as modules so `src` is importable, e.g. `python -m fit.<script>`.
 
 ## Data
 

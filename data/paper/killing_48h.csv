@@ -1,0 +1,6 @@
+# Bulk killing of 2686 cells (IFNγ-pretreated) by TILs after 48 h of co-culture, viability screen.
+# Source: Frangieh et al. 2021, main text p.4 and Extended Data Fig. 3a. kill_percent is relative to IFNγ-pretreated cells without TILs (ED Fig. 3a legend).
+ratio_til_to_tumor,hours,kill_percent
+1,48,30.96
+2,48,58.35
+4,48,75.0
