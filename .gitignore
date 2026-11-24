@@ -1,13 +1,12 @@
 # Papers, notes and rules (local only)
 literature/
 
-# Large processed dataset, re-downloaded by tmesim.data.load_adata()
+# Large processed dataset, re-downloaded by src.data.load_adata()
 data/*.h5ad
 
 # Python artifacts
 __pycache__/
 *.py[cod]
-*.egg-info/
 .ipynb_checkpoints/
 
 # Environment directories
