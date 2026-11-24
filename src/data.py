@@ -37,5 +37,9 @@ def load_metadata() -> pd.DataFrame:
 
 def load_supp_table(sheet: str) -> pd.DataFrame:
     # One sheet of the paper's supplementary workbook, e.g. "2j".
-    # The first 3 rows of each sheet are a title and description; the header is row 4.
-    return pd.read_excel(SUPP_TABLES, sheet_name=f"Supplementary Table {sheet}", header=3)
+    # Each sheet starts with title rows; the header row is the first whose first cell is a column name.
+    raw = pd.read_excel(SUPP_TABLES, sheet_name=f"Supplementary Table {sheet}", header=None)
+    header = raw.index[raw[0].isin(["id", "sgrna", "Guide Name"])][0]
+    df = raw.iloc[header + 1 :].reset_index(drop=True)
+    df.columns = raw.iloc[header]
+    return df.dropna(axis=1, how="all").infer_objects()

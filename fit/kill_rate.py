@@ -1,6 +1,7 @@
 # Fit the baseline kill rate of the M0 model to bulk killing at three TIL:tumor ratios.
-# M0: dT/dt = (r - k*E) T, with E = R*T0 constant. Relative to the no-TIL control, growth r cancels:
-#   S(R, t) = T_coculture / T_control = exp(-kappa * R * t),   kappa = k*T0  [per hour per unit ratio]
+# M0: dT/dt = (r - k*E) T, with E = R*T0 constant. Relative to IFNγ-pretreated cells without TILs
+# (the paper's reference), growth r and any direct IFNγ effect cancel:
+#   S(R, t) = T_coculture / T_IFNγ_only = exp(-kappa * R * t),   kappa = k*T0  [per hour per unit ratio]
 # Input:  data/paper/killing_48h.csv
 # Output: results/params/kill_rate.json, results/figures/kill_rate.png
 import json
@@ -45,7 +46,7 @@ out = {
     "kappa_per_point": dict(zip(df.ratio_til_to_tumor.astype(str), per_point.round(6))),
     "loo_abs_error_kill_percent": float(np.mean(np.abs(df.kill_loo - df.kill_percent))),
     "data": "data/paper/killing_48h.csv",
-    "model": "S = exp(-kappa * R * t), growth cancels against no-TIL control",
+    "model": "S = exp(-kappa * R * t), relative to IFNg-pretreated cells without TILs",
 }
 (ROOT / "results" / "params").mkdir(parents=True, exist_ok=True)
 json.dump(out, open(ROOT / "results" / "params" / "kill_rate.json", "w"), indent=2)

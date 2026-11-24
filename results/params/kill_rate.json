@@ -9,5 +9,5 @@
   },
   "loo_abs_error_kill_percent": 5.096973507884338,
   "data": "data/paper/killing_48h.csv",
-  "model": "S = exp(-kappa * R * t), growth cancels against no-TIL control"
+  "model": "S = exp(-kappa * R * t), relative to IFNg-pretreated cells without TILs"
 }
